@@ -20,7 +20,6 @@ class Solution {
                 p++;
             }
         }
-        return new int[] {p+1,q+1};
-        
+        return new int[] {p+1,q+1};  
     }
 }
