@@ -9,7 +9,6 @@ class Solution {
             a=nums[i]+nums[j];
             if(a==target)
             {
-                //System.out.printf("%d %d",i,j);
                 return new int[] {i,j} ;
             }
             }
