@@ -1,24 +1,36 @@
 class Solution {
-    public boolean containsNearbyDuplicate(int[] nums, int k) 
-    {
-        int n=nums.length;
+    public List<String> findRepeatedDnaSequences(String s) 
+    { 
+        int n=s.length();
+        int k=10;
+        int left=0;
         int j=0;
-        int maxi=0;
-        int i=0;
-        HashMap <Integer,Integer> Map = new HashMap<>();
-        for(i=0;i<n;i++)
+        List<String> ans = new ArrayList<>();
+        HashSet <String> set1=new HashSet<>();
+        HashSet <String> set2=new HashSet<>();
+        if(k>n)
         {
-            if(Map.containsKey(nums[i]))
-            {
-                j=Map.get(nums[i]);
-                
-                if(i-j <=k)
-                {
-                    return true;
-                } 
-            }    
-            Map.put(nums[i],i);
+            return ans;
         }
-        return false;
+        else
+        {
+        for(j=0;j<=n-k;j++)
+        {
+            String sub= s.substring(j, j + k);
+            if(set1.contains(sub))
+            {
+                if(!set2.contains(sub))
+                {
+                set2.add(sub);
+                ans.add(sub);
+                }    
+            }
+            else
+            {
+                set1.add(sub);
+            }    
+        }
+        }
+       return ans; 
     }
 }
